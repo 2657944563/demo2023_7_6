@@ -9,3 +9,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 1234
+# 配置mybatisplus 日志输出位置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
