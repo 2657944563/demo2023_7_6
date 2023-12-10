@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import sun.misc.Unsafe;
 
 import javax.annotation.Resource;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.LongAdder;
@@ -23,10 +24,22 @@ class Demo202376ApplicationTests {
 
 
     @Test
+    void threadLocalTest1() {
+        ThreadLocal tl = new ThreadLocal();
+        tl.set("123");
+        tl.set("223");
+        System.out.println(tl.get());
+        System.out.println(tl.get());
+
+    }
+
+
+    @Test
     void threadTest() {
         LongAdder longAdder = new LongAdder();
         ReentrantLock lock = new ReentrantLock();
         lock.tryLock();
+//        lock.unlock();
         System.out.println(lock.isLocked());
         final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                 3,

@@ -6,7 +6,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @SpringBootApplication
 @ComponentScan(basePackages = "com.example", nameGenerator = FullyQualifiedAnnotationBeanNameGenerator.class)
 public class Demo202376Application {
